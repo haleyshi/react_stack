@@ -21,3 +21,19 @@ python -m SimpleHTTPServer
 
 ## Run WebPack Dev Server with auto reloading
 node server
+
+
+## Material-UI 
+### Colors
+material-ui.com/#/customization/colors
+
+## Firebase
+https://www.firebase.com/
+
+Google Account
+
+新建项目 - react-stack
+
+https://react-stack-89fd0.firebaseio.com/
+
+Database >> 导入JSON文件 >> ./data/messages.json
