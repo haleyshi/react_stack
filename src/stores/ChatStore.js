@@ -8,7 +8,10 @@ class ChatStore {
         this.state = {user: null};
     }
 
-
+    @bind(Actions.login)
+    login(user) {
+    	this.setState({user: user});
+    }
 }
 
 export default alt.createStore(ChatStore);
