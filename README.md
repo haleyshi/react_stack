@@ -28,12 +28,30 @@ node server
 material-ui.com/#/customization/colors
 
 ## Firebase
+#### Create new WebApp
 https://www.firebase.com/
 
 Google Account
 
 新建项目 - react-stack
 
-https://react-stack-89fd0.firebaseio.com/
+https://console.firebase.google.com/
 
-Database >> 导入JSON文件 >> ./data/messages.json
+
+Get ref for your database: https://react-stack-89fd0.firebaseio.com/
+
+#### Import Data
+Database >> 数据 >> 导入JSON文件 >> ./data/messages.json
+
+#### Public Access
+Database >> 规则 >> Allow public access, refer https://firebase.google.com/docs/database/security/quickstart
+
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+
+#### My Data
+Get ref for your data: https://react-stack-89fd0.firebaseio.com/messages
