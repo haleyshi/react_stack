@@ -9,10 +9,6 @@ class Channel extends React.Component {
         super(props);
     }
 
-    onClick() {
-        Actions.channelOpened(this.props.channel)
-    }
-
     render() {
         let style = {};
 
@@ -22,7 +18,7 @@ class Channel extends React.Component {
 
         return (
             <ListItem
-                onClick={this.onClick.bind(this)}
+                href={'/#/chat/' + this.props.channel.key}
                 style={style}>
                 {this.props.channel.name}
             </ListItem>

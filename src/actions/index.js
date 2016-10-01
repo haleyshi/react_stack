@@ -8,7 +8,6 @@ class Actions {
             'channelsFailed',
             'messagesReceived',
             'messagesFailed',
-            'channelOpened',
             'messagesLoading',
             'sendMessage',
             'messageSendSuccess',
@@ -17,7 +16,7 @@ class Actions {
         );
     }
 
-    login(args) {
+    login(router) {
         return (dispatch) => {
             var firebaseRef = new Firebase('https://react-stack-89fd0.firebaseio.com');
             firebaseRef.authWithOAuthPopup("google", (error, user) => {
@@ -26,6 +25,8 @@ class Actions {
                 }
 
                 dispatch(user);
+
+                router.transitionTo('/chat');
             });
         }
     }

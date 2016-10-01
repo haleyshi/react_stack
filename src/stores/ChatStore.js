@@ -31,8 +31,7 @@ class ChatStore {
             .keys()
             .each((key, index) => {
                 channels[key].key = key;
-                if (index === 0) {
-                    channels[key].selected = true;
+                if (channels[key].selected) {
                     selectedChannel = channels[key];
                 }
             })
@@ -72,25 +71,6 @@ class ChatStore {
         this.setState({
             messages: this.state.messages
         });
-    }
-
-    @bind(Actions.channelOpened)
-    channelOpened(selectedChannel) {
-        _(this.state.channels)
-            .values()
-            .each((channel) => {
-                channel.selected = false;
-            })
-            .value();
-
-        selectedChannel.selected = true;
-
-        this.setState({
-            selectedChannel,
-            channels: this.state.channels
-        });
-
-        setTimeout(this.getInstance().getMessages, 100);
     }
 
     @bind(Actions.messagesLoading)

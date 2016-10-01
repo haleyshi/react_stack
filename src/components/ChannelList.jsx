@@ -10,7 +10,20 @@ var {Card, List, CircularProgress} = mui;
 class ChannelList extends React.Component {
     constructor(props) {
         super(props);
-        ChatStore.getChannels();
+    }
+
+    // react call this when the Component Mount at the 1st time
+    componentDidMount() {
+        this.selectedChannel = this.props.params.channel;
+        ChatStore.getChannels(this.selectedChannel);
+    }
+
+    // react call this on URL changes
+    componentWillReceiveProps(nextProps) {
+        if (this.selectedChannel != nextProps.params.channel) {
+            this.selectedChannel = nextProps.params.channel;
+            ChatStore.getChannels(this.selectedChannel);
+        }
     }
 
     static getStores() {
